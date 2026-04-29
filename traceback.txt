@@ -1,40 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language)
-  File "game/screens.rpy", line 84, in <module>
-    ysize gui.sidebar_height
-AttributeError: 'StoreModule' object has no attribute 'sidebar_height'
+While running game code:
+  File "game/script.rpy", line 27, in script
+    show screen say_bottom("bottom", "bottom speaker")
+renpy.display.screen.ScreenNotFound: Screen 'say_bottom' is not known.
 
 -- Full Traceback ------------------------------------------------------------
 
-Full traceback:
-  File "X:\Downloadsx\renpy-8.3.2-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "X:\Downloadsx\renpy-8.3.2-sdk\renpy\main.py", line 652, in main
-    run(restart)
-  File "X:\Downloadsx\renpy-8.3.2-sdk\renpy\main.py", line 75, in run
-    renpy.translation.init_translation()
-  File "X:\Downloadsx\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 702, in init_translation
-    renpy.store._init_language() # type: ignore
-  File "renpy/common/00start.rpy", line 83, in _init_language
-    renpy.change_language(language)
-  File "X:\Downloadsx\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 796, in change_language
-    new_change_language(tl, language)
-  File "X:\Downloadsx\renpy-8.3.2-sdk\renpy\translation\__init__.py", line 748, in new_change_language
-    i.apply()
-  File "X:\Downloadsx\renpy-8.3.2-sdk\renpy\ast.py", line 2800, in apply
-    value = renpy.python.py_eval(expr)
-  File "X:\Downloadsx\renpy-8.3.2-sdk\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "X:\Downloadsx\renpy-8.3.2-sdk\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/screens.rpy", line 84, in <module>
-    ysize gui.sidebar_height
-AttributeError: 'StoreModule' object has no attribute 'sidebar_height'
+Traceback (most recent call last):
+  File "game/script.rpy", line 27, in script
+    show screen say_bottom("bottom", "bottom speaker")
+  File "renpy/ast.py", line 2241, in execute
+    self.call("execute")
+    ~~~~~~~~~^^^^^^^^^^^
+  File "renpy/ast.py", line 2195, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/statements.py", line 381, in call
+    return method(parsed, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/000statements.rpy", line 671, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 1355, in show_screen
+    raise ScreenNotFound(name[0])
+renpy.display.screen.ScreenNotFound: Screen 'say_bottom' is not known.
 
-Windows-10-10.0.19045 AMD64
-Ren'Py 8.3.2.24090902
+Windows-10-10.0.19045-SP0 AMD64
+Ren'Py 8.5.2.26010301
 ee 1.0
-Tue Apr 28 20:35:11 2026
+Wed Apr 29 16:43:08 2026

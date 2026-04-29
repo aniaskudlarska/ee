@@ -111,6 +111,92 @@ style lefttext:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
+screen say_top(who, what):
+    style_prefix "say"
+
+    window:
+        id "window"
+
+        xalign 0.5
+        yalign 0.0   # Top of the screen
+        ysize 150
+        xfill True
+        background "#fffb0088"  # semi-transparent black
+
+        vbox:
+            spacing 5
+
+            if who:
+                text who id "who" size 28 color "#fff"
+
+            text what id "what" size 32 color "#fff"
+
+screen say_left(who,what):
+    style_prefix "say"
+    window:
+        id "window"
+        xalign 0
+        yalign 0.5 # mids screen?
+        xsize 300
+        ysize 1080
+        background Frame("#f39494ff",0,0,outline="#ffffff", outline_width = 3 ) #black
+        padding(20,20)
+
+        vbox:
+            spacing 15
+
+            if who:
+                window:
+                    id "hnamebox"
+                    style "namebox"
+                    text who id "who" size 28 color "#fff"
+            text what id "what" size 32 color "#fff"
+
+screen say_right(who,what):
+    style_prefix "say"
+    window:
+        id "window_right"
+        xalign 1.0
+        yalign 0.5 # mids screen?
+        xsize 300
+        ysize 1080
+        background "#1e28b9ff"  # black
+        
+        vbox:
+            spacing 15
+            xalign 1.0 #contents to right
+
+            if who:
+                window:
+                    id "rnamebox"
+                    style "namebox"
+                    xalign 1.0 # to right
+                    text who id "who" size 28 color "#fff" text_align 1.0 #inside
+            text what id "what" size 32 color "#fff" xmaximum 350 text_align 1.0 xalign 1.0
+screen say_bottom(who, what):
+    style_prefix "say"
+
+    window:
+        id "window_bottom"
+        xalign 0.5
+        yalign 1.0 # mids screen?
+        xsize 1920
+        ysize 200
+        background Frame("#00ff2aff",0,0,outline="#ffffff", outline_width = 3 ) #black
+
+        if who is not None:
+            window:
+                id "bnamebox"
+                style "namebox"
+                text who id "who"
+
+        text what id "what"
+    ## If there's a side image, display it above the text. Do not display on the
+    ## phone variant - there's no room.
+    if not renpy.variant("small"):
+        add SideImage() xalign 0.0 yalign 1.0
+
+
 screen say(who, what):
     style_prefix "say"
 
@@ -131,7 +217,6 @@ screen say(who, what):
     ## phone variant - there's no room.
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
-
 
 ## Make the namebox available for styling through the Character object.
 init python:
@@ -363,7 +448,6 @@ style navigation_button_text:
 ## Used to display the main menu when Ren'Py starts.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
-
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.

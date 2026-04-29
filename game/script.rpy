@@ -3,7 +3,11 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define b = Character("bottom", screen="say_bottom")
+define t = Character("Top", screen="say_top")
+define l= Character("left", screen="say_left")
+define r = Character("right", screen="say_right")
+
 
 
 # The game starts here.
@@ -14,20 +18,26 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    image backgroundgif = Movie(size=(1920,1080),channel="movie_dp", play="images/well.webm")
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show eileen happy
-
+    show backgroundgif
+    show screen say_top("Top", "top speaker")
+    show screen say_left("left", "left speaker")
+    show screen say_right("right", "right speaker")
+    show screen say_bottom("bottom", "bottom speaker")
     # These display lines of dialogue.
 
-    e "You've created a new Ren'Py game."
+    b "check bottom"
+    t "does this show in the top properly?"
+    l "check left"
+    r "check right"
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    b "check bottom"
+    t "does this show in the top properly?"
+    l "check left"
+    r "check right"
+
+
 
     # This ends the game.
-
     return
