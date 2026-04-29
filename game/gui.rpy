@@ -88,8 +88,9 @@ define gui.title_text_size = 75
 
 ## The images used for the main and game menus.
 
+image menubg = Image("mbg.jpg")
 image maineMenu = Movie(size=(1920,1080),channel="movie_dp", play="images/well.webm")
-define gui.main_menu_background = "maineMenu"
+define gui.main_menu_background = "menubg"
 define gui.game_menu_background = "maineMenu"
 
 

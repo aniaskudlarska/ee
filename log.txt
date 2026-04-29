@@ -1,0 +1,71 @@
+2026-04-29 21:04:08 UTC
+Windows-10-10.0.19045-SP0
+Ren'Py 8.5.2.26010301
+
+Early init took 54 ms
+Loading error handling took 42 ms
+Loading script took 773 ms
+Loading save slot metadata took 21 ms
+Loading persistent took 0 ms
+
+File "game/gui.rpy", line 93: expected expression
+    define gui.main_menu_background =
+                                      ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 269 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 595.79'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 75, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(788, 443) drawable=(788, 443)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 11 ms
+Loading script took 155 ms
+Loading save slot metadata took 11 ms
+Loading persistent took 0 ms
+Running init code took 72 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 8 ms
+Backing up script files to 'C:\\Users\\subve\\AppData\\Roaming/RenPy/backups\\ee':
+Dump and make backups took 47 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 42 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 166 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 8 ms
+Save screen analysis took 11 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 176 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 595.79'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 75, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(788, 443) drawable=(788, 443)
+Maximum texture size: 4096x4096
+Cleaning stores took 0 ms
+Load screen analysis took 18 ms
+Analyze screens took 0 ms
+Running _start took 0 ms
